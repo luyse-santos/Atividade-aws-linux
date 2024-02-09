@@ -69,7 +69,7 @@ UDP, 2049/TCP/UDP, 80/TCP, 443/TCP).
    # 2) Configurações Linux:
   ### NFS:
   - Faça login remotamente no terminal via SSH
-  - crie um diretório para a montagem do NFS
+  - Crie um diretório para a montagem do NFS
   - instale os utilitarios EFS e NFS
     ```
     sudo yum install -y amazon-efs-utils
@@ -99,12 +99,53 @@ UDP, 2049/TCP/UDP, 80/TCP, 443/TCP).
   - Digite o comando abaixo para criar um arquivo
     ```
      sudo nano nome-arquivo.sh
+    ```
+  - Insira os comandos :
+ 
+
+   ```
+    #! /bin/bash
+
+    #dados por hora
+    DADOS= $( data + ' %d/%m/%Y como %T ' )
+ 
+    #status do serviço Apache
+    STATUS= $( status systemctl httpd )
+
+    #Diretório onde os arquivos de log serão armazenados
+    SEU_DIRETORIO= " caminho para o diretório "
+
+    #Condicional para verificar se o Apache está ativo ou não e imprimir o resultado nos arquivos
+    #Se a saída da variável for igual a "active (running)", escreva que o Apache está online
+    #Se não, escreva que o Apache está offline
+    if [[ " ${STATUS} "  ==  * " ativo (em execução) " * ]] ;  então
+       echo  " O Apache está online - ${DATA} "  >>  " ${SEU_DIRETORIO} /servico_online.txt "
+   outro
+       echo  " O Apache está offline - ${DATA} "  >>  " ${SEU_DIRETORIO} /servico_offline.txt "
+   fi
+
+ ```
+ - Execute o comdo abaixo:
+```
+chmod +x nome-do-arquivo.sh
+
+```
+- Na pasta com seu nome na NFS escreva o comando:
+```
+chmod 775 /diretorio-criado/seu nome/*
+
+```
+- Agora para o script realizar a verificação e ser executado a cada 5 minutos
+  - No diretório /etc abra o arquivo crontab e adicione:
+    ```
+
+       */5 * * * * bash /nome-do-script.sh
 
     ```
-    - Insira os comandos :
+-- Executando tudo, o script irá gerar uma verificação de status do Apache a cada 5 minutos, criará uma mensagem personalizada de Online e Offline, também irá informa a data , hora e o nome do serviço e tudo dentro de um arquivo.txt gerado no diretorio com seu nome
 
-      ```
+    
 
-      ``
+      
 
     
