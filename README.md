@@ -99,7 +99,9 @@ UDP, 2049/TCP/UDP, 80/TCP, 443/TCP).
   - Digite o comando abaixo para criar um arquivo
     ```
      sudo nano nome-arquivo.sh
+    
     ```
+    
   - Insira os comandos :
  
 
@@ -124,25 +126,38 @@ UDP, 2049/TCP/UDP, 80/TCP, 443/TCP).
        echo  " O Apache está offline - ${DATA} "  >>  " ${SEU_DIRETORIO} /servico_offline.txt "
    fi
 
- ```
- - Execute o comdo abaixo:
+  ```
+
+
+  - Execute o comdo abaixo:
+
 ```
+
 chmod +x nome-do-arquivo.sh
 
 ```
-- Na pasta com seu nome na NFS escreva o comando:
+
+
+ - Na pasta com seu nome na NFS, escreva o comando:
+
+
 ```
 chmod 775 /diretorio-criado/seu nome/*
 
 ```
+
+
 - Agora para o script realizar a verificação e ser executado a cada 5 minutos
   - No diretório /etc abra o arquivo crontab e adicione:
-    ```
 
-       */5 * * * * bash /nome-do-script.sh
 
-    ```
--- Executando tudo, o script irá gerar uma verificação de status do Apache a cada 5 minutos, criará uma mensagem personalizada de Online e Offline, também irá informa a data , hora e o nome do serviço e tudo dentro de um arquivo.txt gerado no diretorio com seu nome
+   ```
+   /5 * * * * bash /nome-do-script.sh
+   ```
+
+
+
+ Executando tudo, o script irá gerar uma verificação de status do Apache a cada 5 minutos, criará uma mensagem personalizada de Online e Offline, também irá informa a data , hora e o nome do serviço e tudo dentro de um arquivo.txt gerado no diretorio com seu nome
 
     
 
