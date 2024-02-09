@@ -13,5 +13,5 @@ MAILTO=root
 # |  |  |  |  |
 # *  *  *  *  * user-name  command to be executed
 
-*/5 * * * * /mnt/nfs/validar.sh.save
+*/5 * * * * bash /mnt/nfs/validar.sh.save
  
