@@ -1,4 +1,3 @@
-# Atividade-aws-linux
 # atividade_aws_linux
 Atividade do estágio Compass.UOL
 ## Requisitos da atividade: 
@@ -97,3 +96,15 @@ UDP, 2049/TCP/UDP, 80/TCP, 443/TCP).
      sudo systemctl enable httpd
      ```
     ### Criando os Scripts
+  - Digite o comando abaixo para criar um arquivo
+    ```
+     sudo nano nome-arquivo.sh
+
+    ```
+    - Insira os comandos :
+
+      ```
+
+      ``
+
+    
