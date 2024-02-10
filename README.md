@@ -152,7 +152,7 @@ chmod 775 /diretorio-criado/seu nome/*
 
 
    ```
-   /5 * * * * bash /nome-do-script.sh
+   */5 * * * * bash /nome-do-script.sh
    ```
 
 
