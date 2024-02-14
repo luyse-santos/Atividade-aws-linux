@@ -52,7 +52,7 @@ UDP, 2049/TCP/UDP, 80/TCP, 443/TCP).
 - (Será usada a VPC Padrão).
 - 16 GB de armazenamento gp2(SSD).
 - Selecione o par de chaves criado anteriormente.
-- Em "Redes de Segurança" selecione a VPC criada e o Grupo de Gegunrança criado e configurado anteriormente.
+- Em "Redes de Segurança" selecione a VPC criada e o Grupo de segunrança criado e configurado anteriormente.
 - Clique em "Executar Instância".
 ### Criando e alocando ip elástico 
 - No menu esquerdo em "rede e segurança" selecione `IPs Elásticos`> Alocar Indereço IP.
