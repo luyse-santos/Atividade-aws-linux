@@ -18,7 +18,7 @@ Atividade do estágio Compass.UOL
 - Crie um diretório dentro do sistema de arquivos do NFS com seu nome;
 - Subir um apache no servidor - o apache deve estar online e rodando;
 - Crie um script que valide se o serviço está online e envie o resultado da validação para o seu diretório no nfs;
-- O script deve conter - Dados HORA + nome do serviço + Status + mensagem personalizada de ONLINE ou offline;
+- O script deve conter - Data HORA + nome do serviço + Status + mensagem personalizada de ONLINE ou offline;
 - O script deve gerar 2 arquivos de saida: 1 para o serviço online e 1 para o serviço OFFLINE;
 - Execução automatizada do script a cada 5 minutos.
   # 1 ) Instância AWS
