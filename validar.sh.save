@@ -1,0 +1,19 @@
+!/bin/bash
+
+# data e a hora
+DATA=$(date +'%d/%m/%Y as %T')
+
+# status do serviço Apache
+STATUS=$(systemctl status httpd)
+
+# Diretório onde os arquivos de log serão armazenados
+DIRETORIO_LUYSE="/mnt/nfs/luyse"
+
+# Condicional para verificar se o Apache está ativo ou não e imprimir o resultado nos arquivos
+# Se a saída da variável for igual a "active (running)", escreva que o Apache está online
+# Se não, escreva que o Apache está offline
+if [[ "${STATUS}" == *"active (running)"* ]]; then
+    echo "O Apache está online - ${DATA}" >> "${DIRETORIO_LUYSE}/servico_online.txt"
+else
+    echo "O Apache está offline - ${DATA}" >> "${DIRETORIO_LUYSE}/servico_offline.txt"
+fi
